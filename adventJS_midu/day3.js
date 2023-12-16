@@ -40,7 +40,7 @@
 function findNaughtyStep(original, modified) {
   // Code here
 
-  let   ;
+  let copyOriginal;
   let copyModified;
   if(original.length < modified.length){
     copyOriginal = modified;
