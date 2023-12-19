@@ -40,23 +40,31 @@
 function findNaughtyStep(original, modified) {
   // Code here
 
-  let copyOriginal;
-  let copyModified;
+  let copyOriginal = original;
+  let copyModified = modified;
   if(original.length < modified.length){
     copyOriginal = modified;
     copyModified = original;
   }
 
-  let nonAllowedStep;
+  let nonAllowedStep = '';
   for(let i=0; i<copyOriginal.length; i++){
   
-    let result = copyModified.split('').some( elem => elem === copyOriginal[i] );
+    // let findNotAllowed = copyModified.split('').some( elem => elem === copyOriginal[i] );
 
-    if(!result)
+    let findedNotAllowed = true;
+    for(let j=0; j<copyModified.length; j++){
+      if(original[i] === modified[j]){
+        findedNotAllowed = false;
+        break;
+      }
+    }
+
+    if(findedNotAllowed)
       nonAllowedStep = copyOriginal[i];
   }
   
-  return nonAllowedStep != undefined ? nonAllowedStep : '';
+  return nonAllowedStep;
 }
 
 const original = 'abcd'
