@@ -54,9 +54,9 @@ function findNaughtyStep(original, modified) {
 
     let findedNotAllowed = true;
     for(let j=0; j<copyModified.length; j++){
-      if(original[i] === modified[j]){
+
+      if(copyOriginal[i] == copyModified[j]){
         findedNotAllowed = false;
-        break;
       }
     }
 
