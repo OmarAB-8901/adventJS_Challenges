@@ -7,13 +7,13 @@
 function decode(message) {
    // Code here
 
-  // console.log( message.split('').findIndex( elem => elem == '(' ) );
+  let aux = message.split('(').join('').split(')').join('');
+  console.log( aux.split('').reverse().join('') );
 
-  message.split('').forEach( elem => {
-    console.log(elem);
+  message.split('').forEach( (chart, i) => {
 
-    if(elem == '('){
-      
+    if(chart == '('){
+     console.log(chart,i); 
     }
   });
 
